@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <cho-button @click="clickme('传点内容-default')" type="default">这是我的 Default 按钮</cho-button>
+    <br /><br />
+    <cho-button @click="clickme('传点内容-primary')" type="primary">这是我的 Primary 按钮</cho-button>
   </div>
 </template>
 
@@ -11,8 +13,13 @@ import HelloWorld from './components/HelloWorld.vue';
 export default {
   name: 'App',
   components: {
-    HelloWorld,
+    HelloWorld
   },
+  methods: {
+    clickme(content) {
+      console.log('custom button content: ', content);
+    }
+  }
 };
 </script>
 
